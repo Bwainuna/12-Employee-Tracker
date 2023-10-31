@@ -1,4 +1,4 @@
-# 12-Employee-Tracker
+# Employee-Tracker
 ## User Story
 
 AS A business owner
