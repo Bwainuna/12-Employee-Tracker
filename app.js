@@ -22,6 +22,8 @@ db.getConnection((err, connection) => {
     startApp();
 });
 
+// Function using inquirer allowing the user to access/alter various tables inside the database
+
 function startApp() {
     inquirer
         .prompt([
@@ -41,6 +43,9 @@ function startApp() {
                 ],
             },
         ])
+
+// connects the various inquirer choices to the functions depending on the user's choice. Will lead them to various tables inside the database.
+
         .then((answers) => {
             switch (answers.menuChoice) {
                 case "View all departments":
@@ -72,6 +77,8 @@ function startApp() {
         });
 }
 
+// Allows users to view all the departments
+
 function viewDepartments() {
     const query = "SELECT id, name FROM department";
     db.query(query, (err, results) => {
@@ -85,6 +92,8 @@ function viewDepartments() {
     });
 }
 
+// Allows the user to view the role and salarys of employees
+
 function viewRoles() {
     const query = "SELECT id, title, salary, department_id FROM role";
     db.query(query, (err, results) => {
@@ -97,6 +106,8 @@ function viewRoles() {
         startApp();
     });
 }
+
+// Displays the employee's name, role, id, salary, and department
 
 function viewEmployees() {
     const query =
@@ -114,6 +125,8 @@ function viewEmployees() {
         startApp();
     });
 }
+
+// Allows users to alter the database and enter in a new department inside the department table
 
 function addDepartment() {
     inquirer
@@ -136,6 +149,8 @@ function addDepartment() {
             });
         });
 }
+
+// Allows users to add a new job title, salary, and id inside the role table
 
 function addRole() {
     inquirer
@@ -173,6 +188,8 @@ function addRole() {
             );
         });
 }
+
+// Allows the user to enter a new employee into the database.
 
 function addEmployee() {
     inquirer
@@ -221,6 +238,8 @@ function addEmployee() {
             );
         });
 }
+
+// Allows the user to alter the role of existing employees
 
 function updateEmployeeRole() {
     inquirer
