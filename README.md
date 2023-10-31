@@ -31,7 +31,11 @@ Repo: https://github.com/Bwainuna/12-Employee-Tracker
 
 ## Video Link
 
+video tutorial - https://youtu.be/79FYqtF7BPs
+
 ## Sources
+
+Stack Overflow - https://stackoverflow.com/questions/66626936/inquirer-js-populate-list-choices-from-sql-database
 
 ChatGPT by OpenAI @ https://openai.com/blog/chatgpt
 
